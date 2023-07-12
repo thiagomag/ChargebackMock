@@ -1,7 +1,7 @@
 package com.example.chargebackmock;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("v1")
 public class ChargebackContrller {
 
-    @PostMapping("/chargeback")
+    @GetMapping("/chargeback")
     public Mono<ChargebackResponse> mercadoPagoInstantPaymentNotificationQueue() {
         return Mono.just(ChargebackResponse.builder()
                         .id(1L)
